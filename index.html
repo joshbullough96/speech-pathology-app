@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js" defer></script>
+    <title>Speech Pathology App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Speech Language Pathology</h1>
+        <p>Select a sound category and generate a word for practice.</p>
+
+        <div class="controls">
+            <select id="wordTypeDropdown">
+                <option>Loading...</option>
+            </select>
+            <button onclick="getWord()">Get Random Word</button>
+        </div>
+
+        <div id="popUp" class="hidden">
+            <h3 id="word"></h3>
+        </div>
+    </div>
+</body>
+</html>
