@@ -122,6 +122,11 @@ button:hover {
 
 /* Phones */
 @media (max-width: 600px) {
+
+    .container {
+        margin: 10px 0;
+    }
+
     .controls {
         flex-direction: column;
         justify-content: center;
@@ -137,7 +142,10 @@ button:hover {
 
     #popUp {
         width: 100%;
-        font-size: 2rem;
+    }
+
+    .error {
+        font-size: 1.4rem !important;
     }
 
 }
