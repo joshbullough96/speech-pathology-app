@@ -3,16 +3,17 @@
 const words = [];
 const Words = {};
 
+async function fetchData(){
+    const res = await fetch('https://getsheet.josh-bullough12.workers.dev/');
+    const json = await res.json();
+    console.log(json);
+    return json;
+}
+
 async function fetchWordTypes() {
-    const sheetId = '1VphuHXyUE0AF8AgCOJcsUOrXu-1Rl8xYkh-0T8ruRgs';
-    const sheetName = 'Sheet1';
-    const apiKey = 'AIzaSyBjh2c-E3ITDPhM4xCIbuD-rRn5WcEwZE0';
-
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}?key=${apiKey}`;
-
     try {
-        const response = await fetch(url);
-        const data = await response.json();
+
+        const data = await fetchData();
 
         const rows = data.values; //.slice(1); // Skip headers
 
@@ -64,7 +65,7 @@ async function getWord() {
     if(!selectedItem) {
         return;
     }
-    await delay(1.2);
+    await delay(1);
     const randNum = Math.floor(Math.random() * matchedWords.length);
     const randomWord = matchedWords[randNum];
     const wordDisplay = document.getElementById("word");
