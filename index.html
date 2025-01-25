@@ -16,9 +16,22 @@
         <p>Select a sound category and generate a word for practice.</p>
 
         <div class="controls">
-            <select id="wordTypeDropdown">
-                <option>Loading...</option>
-            </select>
+            <div class="dropdown">
+                <label for="soundTypeDropdown">Sound Type</label>
+                <select id="soundTypeDropdown">
+                    <option>Loading...</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <label for="soundTypeDropdown">Word Type</label>
+                <select id="wordTypeDropdown">
+                    <option>Loading...</option>
+                </select>
+            </div>
+            
+        </div>
+
+        <div class="controls">
             <button onclick="getWord()">Get Random Word</button>
         </div>
 

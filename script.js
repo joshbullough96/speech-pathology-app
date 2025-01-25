@@ -3,21 +3,23 @@
 const words = [];
 const Words = {};
 
-async function fetchData(){
-    const res = await fetch('https://getsheet.josh-bullough12.workers.dev/');
+async function fetchData(sheet){
+    const res = await fetch(`https://getsheet.josh-bullough12.workers.dev?sheet=${sheet}`);
     const json = await res.json();
     console.log(json);
     return json;
 }
 
-async function fetchWordTypes() {
+async function fetchsoundTypes() {
     try {
 
-        const data = await fetchData();
+        const sheet1Data = await fetchData('Sheet1');
+        const sheet2Data = await fetchData('Sheet2');
 
-        const rows = data.values; //.slice(1); // Skip headers
-
+        const rows = sheet1Data.values; //.slice(1); // Skip headers
+        
         const headers = rows[0];
+        
         console.log(headers);
         // console.log(words); // View data in console
 
@@ -29,21 +31,21 @@ async function fetchWordTypes() {
                     return;
                 }
                 
-                const wordType = headers[colIndex]; // Get the correct header for this column
+                const soundType = headers[colIndex]; // Get the correct header for this column
 
-                if (!Words[wordType]) {
-                    Words[wordType] = [];
+                if (!Words[soundType]) {
+                    Words[soundType] = [];
                 }
 
-                Words[wordType].push(cell);
-                words.push({ 'wordType': wordType, 'word': cell });
+                Words[soundType].push(cell);
+                words.push({ 'soundType': soundType, 'word': cell });
             });
         });
 
         console.log(Words, words)
 
         // Example: Populate a dropdown with words
-        const dropdown = document.getElementById("wordTypeDropdown");
+        const dropdown = document.getElementById("soundTypeDropdown");
         dropdown.innerHTML = '<option> </option>';
         headers.forEach(row => {
             const option = document.createElement("option");
@@ -59,7 +61,7 @@ async function getWord() {
     const popUp = document.getElementById("popUp");
     popUp.classList.add("hidden");
 
-    const dropdown = document.getElementById("wordTypeDropdown");
+    const dropdown = document.getElementById("soundTypeDropdown");
     const selectedItem = dropdown.selectedOptions[0].value;
     const matchedWords = Words[selectedItem];
     if(!selectedItem) {
@@ -79,5 +81,5 @@ async function delay(timeInSeconds) {
 }
 
 // Run the function on page load
-window.onload = fetchWordTypes;
+window.onload = fetchsoundTypes;
 

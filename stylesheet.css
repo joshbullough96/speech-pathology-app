@@ -43,8 +43,12 @@ h1 {
     margin: 20px 0;
 }
 
+label {
+    font-size: 1rem;
+    padding: 5px;
+}
+
 select, button {
-    width: 45%;
     font-size: 1.3rem;
     padding: 15px;
     border-radius: 5px;
@@ -57,6 +61,7 @@ select option {
 }
 
 button {
+    width: 86%;
     background-color: #3498db;
     color: white;
     cursor: pointer;
@@ -67,9 +72,15 @@ button:hover {
     background-color: #2980b9;
 }
 
+.dropdown {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Word Display */
 #popUp {
-    width: 60%;
+    width: 86%;
     background: #2ecc71;
     color: white;
     font-size: 2.5rem;
@@ -86,7 +97,7 @@ button:hover {
     visibility: hidden;
 }
 
-/* Tablet Styles (min-width: 600px) */
+/* Tablet Styles (min-width: 600px) */ 
 /* @media (min-width: 600px) {
     .controls {
         flex-direction: row;
@@ -96,13 +107,17 @@ button:hover {
     select, button {
         width: 45%;
     }
-} */
+}
 
 /* Phones */
 @media (max-width: 600px) {
     .controls {
         flex-direction: column;
         justify-content: center;
+    }
+
+    .dropdown {
+        width: 100%;
     }
 
     select, button {
