@@ -140,7 +140,7 @@ async function getWord() {
     });
 
     await delay(1);
-    const randNum = Math.floor(Math.random() * (filteredWords.length + 1));
+    const randNum = Math.floor(Math.random() * (filteredWords.length));
     const randomWord = filteredWords[randNum];
 
     if (randomWord) {
