@@ -37,21 +37,23 @@ h1 {
 /* Controls */
 .controls {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 10px;
     margin: 20px 0;
 }
 
 select, button {
-    font-size: 1.5rem;
-    padding: 20px;
+    width: 45%;
+    font-size: 1.3rem;
+    padding: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
 /* Optional: Increase size of dropdown options */
 select option {
-    font-size: 1.5rem; /* Makes the text inside options larger */
+    font-size: 1.3rem; /* Makes the text inside options larger */
 }
 
 button {
@@ -85,7 +87,7 @@ button:hover {
 }
 
 /* Tablet Styles (min-width: 600px) */
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
     .controls {
         flex-direction: row;
         justify-content: center;
@@ -94,4 +96,22 @@ button:hover {
     select, button {
         width: 45%;
     }
+} */
+
+/* Phones */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    select, button {
+        width: 100%;
+    }
+
+    #popUp {
+        width: 100%;
+        font-size: 2rem;
+    }
+
 }
