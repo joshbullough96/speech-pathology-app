@@ -31,7 +31,7 @@ function doesWordExist(wordToCheck) {
 }
 
 async function fetchData(sheet) {
-    const res = await fetch(`https://getsheet.josh-bullough12.workers.dev?sheet=${sheet}`);
+    const res = await fetch(`https://getsheet.josh-bullough12.workers.dev?sheetId=${sheet.sheetId}&sheet=${sheet.sheetName}`);
     const json = await res.json();
     return json;
 }
@@ -107,7 +107,7 @@ async function fetchSoundTypes() {
 
         for (let sheet of sheets) {
 
-            const [headers, rows] = await fetchAndParseSheet(sheet.sheetName);
+            const [headers, rows] = await fetchAndParseSheet(sheet);
             buildWords(headers, rows, sheet);
             populateDropdown(headers, sheet);
 
