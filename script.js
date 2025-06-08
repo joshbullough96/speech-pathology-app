@@ -91,7 +91,17 @@ function populateDropdown(headers, sheet) {
 
 async function fetchSoundTypes() {
 
-    const sheets = [{ sheetName: 'Sheet1', type: 'soundType' }, { sheetName: 'Sheet2', type: 'wordType' }];
+    const sheets = [
+        { 
+            sheetId: '1VphuHXyUE0AF8AgCOJcsUOrXu-1Rl8xYkh-0T8ruRgs',
+            sheetName: 'Sheet1',
+            type: 'soundType'
+        },
+        { 
+            sheetId: '1VphuHXyUE0AF8AgCOJcsUOrXu-1Rl8xYkh-0T8ruRgs',
+            sheetName: 'Sheet2', 
+            type: 'wordType' 
+    }];
 
     try {
 
