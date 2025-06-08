@@ -31,7 +31,7 @@ function doesWordExist(wordToCheck) {
 }
 
 async function fetchData(sheet) {
-    const res = await fetch(`https://getsheet.josh-bullough12.workers.dev?sheetId=${sheet.sheetId}&sheet=${sheet.sheetName}`);
+    const res = await fetch(`https://getsheet.josh-bullough12.workers.dev?spreadsheet=${sheet.spreadsheet}&sheet=${sheet.sheetName}`);
     const json = await res.json();
     return json;
 }
@@ -91,16 +91,18 @@ function populateDropdown(headers, sheet) {
 
 async function fetchSoundTypes() {
 
+    const spreadsheet = 'WordBank';
+
     const sheets = [
         { 
-            sheetId: '1VphuHXyUE0AF8AgCOJcsUOrXu-1Rl8xYkh-0T8ruRgs',
+            spreadsheet,
             sheetName: 'Sheet1',
-            type: 'soundType'
+            type: 'soundType',
         },
         { 
-            sheetId: '1VphuHXyUE0AF8AgCOJcsUOrXu-1Rl8xYkh-0T8ruRgs',
+            spreadsheet,
             sheetName: 'Sheet2', 
-            type: 'wordType' 
+            type: 'wordType' ,
     }];
 
     try {
